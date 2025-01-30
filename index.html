@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>Home</title>
+  
+  <style>
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  .white-mode {
+    background-color: white;
+    color: black;
+  }
+
+  /* Banner Styles */
+  .banner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  .banner {
+    width: 200%;
+    max-width: 1200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .banner-content {
+    position: absolute;
+    text-align: center;
+    color: rgb(231, 246, 237);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  /* Dropdown Menu Styles */
+  .w3-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .w3-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #34a73d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .w3-dropdown:hover .w3-dropdown-content {
+    display: block;
+  }
+
+  .w3-dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: black;
+  }
+
+  .w3-dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .w3-button {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .w3-top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .cta-button {
+    background-color: #16ad39;
+    padding: 12px 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #b1e675;
+  }
+
+  /* Navbar - To align Spotify logo at the end */
+  .w3-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .w3-col {
+    flex: 1;
+  }
+
+  /* Organizers Section */
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+  }
+
+  .card {
+    background-color: rgb(80, 85, 83);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    width: 30%;
+    overflow: hidden;
+  }
+
+  /* Zoom effect on hover */
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .container {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .button {
+    background-color: #63c08b;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #2fd342;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+   /* Feedback Section Styles */
+    .feedback-section {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .feedback-section input, 
+    .feedback-section textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #555;
+      background-color: #444;
+      color: white;
+    }
+
+    .feedback-section button {
+      background-color: #16ad39;
+      padding: 12px 25px;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .feedback-section button:hover {
+      background-color: #2fd342;
+    }
+
+    .submitted-feedback {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #444;
+      border-radius: 5px;
+    }
+  /* Spotify Logo Styling */
+  .spotify-logo {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-green">
+      <!-- Home link first -->
+      <div class="w3-col">
+        <a href="#" class="w3-button w3-block w3-green">HOME</a>
+      </div>
+
+      <!-- Campaign dropdown -->
+      <div class="w3-dropdown w3-col">
+        <button class="w3-button w3-block w3-green">CAMPAIGN <i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content">
+          <a href="campaign.html">campaign</a>
+          <a href="dates.html">places & dates</a>
+          <a href="speaker.html">speakers</a>
+        </div>
+      </div>
+      
+      <div class="w3-col">
+        <a href="copyright.html" class="w3-button w3-block w3-green">COPYRIGHT</a>
+      </div>
+      <div class="w3-col">
+        <a href="artists.html" class="w3-button w3-block w3-green">ARTISTS</a>
+      </div>
+      <div class="w3-col">
+        <a href="podcast.html" class="w3-button w3-block w3-green">PODCAST</a>
+      </div>
+      
+      <!-- Spotify logo -->
+      <div class="w3-col" style="text-align: right;">
+        <a href="https://www.spotify.com" target="_blank">
+          <img src="image/spotify.png" alt="Spotify Logo" class="spotify-logo">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <button onclick="myFunction()">Toggle white mode</button>
+  <h1>WELCOME TO OUR CAMPAIGN</h1>
+  <p>This campaign is dedicated to spreading awareness about copyright laws and their significance in protecting creative works. We aim to educate individuals and communities on the importance of respecting intellectual property and understanding the consequences of copyright infringement.</p>
+  <p>Join us as we work together to promote a more informed society and encourage respect for the rights of creators.</p>
+
+  <div class="banner-container">
+    <div class="banner" onclick="bannerClicked()">
+      <img src="image/banner3.jpg" alt="Campaign Banner">
+      <div class="banner-content">
+        <h2>JOIN THE CAMPAIGN</h2>
+        <p>Learn more about copyright</p>
+        <a href="campaign.html" class="cta-button">JOIN!</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMPAIGN Section: Organizers Section -->
+  <div class="w3-container w3-padding-64 " id="organizers">
+    <h1>MEET THE ORGANIZERS</h1>
+    <p>These are the organizers of this campaign</p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="image/lyssa.jpg" alt="Alyssa" class="card-image">
+        <div class="container">
+          <h2>ALYSSA NOR</h2>
+          <p class="title">ORGANIZER</p>
+          <p>Save your hardwork with copyright!</p>
+          <p>alyssazhar123@gmail.com</p>
+          <a href="about.html" class="button">More Information</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/piqa1.jpg" alt="Nurafiqah" class="card-image">
+        <div class="container">
+          <h2>NURAFIQAH</h2>
+          <p class="title">ORGANIZER</p>
+          <p>Dreams don't work unless you do.</p>
+          <p>nafiqah1602@gmail.com</p>
+          <a href="about.html" class="button">More Information</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/aisyah1.jpg" alt="Nur Aisyah" class="card-image">
+        <div class="container">
+          <h2>NUR AISYAH SOFIA</h2>
+          <p class="title">ORGANIZER</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <a href="about.html" class="button">More Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Section -->
+  <div class="feedback-section">
+    <h2>We Value Your Feedback</h2>
+    <p>Please provide us with your thoughts and suggestions:</p>
+    <form id="feedbackForm" action="mailto:alyssazhar123@gmail.com" method="post" enctype="text/plain">
+
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+      </div>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript function to handle banner click
+    function bannerClicked() {
+      alert("You clicked on the banner! You are ready to join our campaign");
+    }
+
+    function myFunction() {
+      var element = document.body;
+      element.classList.toggle("white-mode");
+    }
+  </script>
+
+</body>
+</html>

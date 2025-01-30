@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Podcast Page</title>
+<style>
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0e0e0e;
+  color: #131313;
+  line-height: 1.6;
+}
+
+.white-mode {
+    background-color: white;
+    color: black;
+}
+
+header {
+  background: #50cf54;
+  color: rgb(252, 250, 250);
+  padding: 20px 10px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+/* General Navbar Styling */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  position: relative; /* Fix stacking context */
+  z-index: 100; /* Ensure navbar is above the content */
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Podcast section */
+.podcast {
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #8c8a8a;
+  gap: 20px;
+}
+
+.podcast video {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.podcast .details {
+  flex: 1;
+}
+
+.podcast .details h2 {
+  margin-top: 0;
+  color: #a0e6a2;
+}
+
+.podcast .details a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.podcast .details a:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .podcast {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .podcast video {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <button onclick="myFunction()">Toggle white mode</button>
+  <h1>Podcast Hub</h1>
+  <p>Your destination for engaging short videos and insights to know more about copyright.</p>
+</header>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href= "campaign.html"> Campaign</a>
+  <a href="copyright.html">Copyright</a>
+  <a href="artists.html">Artist</a>
+  
+</div>
+
+<div class="container">
+  <!-- Podcast 1 -->
+  <div class="podcast">
+    <video controls>
+      <source src="video/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="details">
+      <h2>Understanding Copyright, Public Domain, and Fair Use</h2>
+      <a href="https://youtu.be/XzzkSZ0Jrko?si=lpJ6e__F3oKOZV5r" target="_blank">Watch Full Video</a>
+    </div>
+  </div>
+
+  <!-- Podcast 2 -->
+  <div class="podcast">
+    <video controls>
+      <source src="video/Untitled video - Made with Clipchamp (1).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="details">
+      <h2>What is Copyright Infringement? (Insider Secrets)</h2>
+      <a href="https://youtu.be/m01Hm0BFhgg?si=-qwDrKSSK8aesKPz" target="_blank">Watch Full Video</a>
+    </div>
+  </div>
+
+  <!-- Podcast 3 -->
+  <div class="podcast">
+    <video controls>
+      <source src="video/Untitled video - Made with Clipchamp (2).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="details">
+      <h2>What May Happen If I Use Copyrighted Music On YouTube</h2>
+      <a href="https://youtu.be/jn4DTNLq2m0?si=RKZolcJ-YqDyCMv8" target="_blank">Watch Full Video</a>
+    </div>
+  </div>
+
+  <!-- Podcast 4 -->
+  <div class="podcast">
+    <video controls>
+      <source src="video/Untitled video - Made with Clipchamp (3).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="details">
+      <h2>Music and Copyright</h2>
+      <a href="https://youtu.be/qe17meaudTI?si=GDji6H1CaiUOqyg9" target="_blank">Watch Full Video</a>
+    </div>
+  </div>
+
+  <!-- Podcast 5 -->
+  <div class="podcast">
+    <video controls>
+      <source src="video/Untitled video - Made with Clipchamp (4).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="details">
+      <h2>Intellectual Property: What is Music Copyright?</h2>
+      <a href="https://youtu.be/B7a6XPiHqrc?si=CW1tsb5emrsKkZso" target="_blank">Watch Full Video</a>
+    </div>
+  </div>
+
+  <!-- Podcast 6 -->
+  <div class="podcast">
+    <video controls>
+      <source src="video/Untitled video - Made with Clipchamp (5).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="details">
+      <h2>Copyright for Musicians: Copyright Basics </h2>
+      <a href="https://youtu.be/tQbJLvli9AY?si=tjIlyav2WTqdJkGl" target="_blank">Watch Full Video</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function myFunction() {
+    var element = document.body;
+    element.classList.toggle("white-mode");
+  }
+</script>
+
+</body>
+</html>

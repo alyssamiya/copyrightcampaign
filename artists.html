@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist News</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .white-mode {
+      background-color: white;
+      color: black;
+    }
+
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      padding: 30px 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+    }
+
+    nav ul li {
+      position: relative;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: rgb(24, 163, 41);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 5px 10px;
+      display: block;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dropdown styles */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      padding: 10px 0;
+      border-radius: 4px;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    nav ul li .dropdown a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav ul li .dropdown a:hover {
+      background-color: #575757;
+    }
+
+    /* Main Section */
+    main {
+      padding: 20px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .news-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      grid-template-rows: repeat(3, auto);
+    }
+
+    .news-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .news-card h2 {
+      padding: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .news-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+
+    /* Toggle button beside h1 */
+    .toggle-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .toggle-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .toggle-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li>
+          <a href="campaign.html">CAMPAIGN</a>
+          <!-- Dropdown Menu for Campaign -->
+          <div class="dropdown">
+            <a href="campaign.html">Campaign</a>
+            <a href="dates.html">Dates & Places</a>
+            <a href="speaker.html">Speakers</a>
+          </div>
+        </li>
+        <li><a href="copyright.html">COPYRIGHT</a></li>
+        <li><a href="artists.html">ARTISTS</a></li>
+        <li><a href="podcast.html">PODCAST</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="toggle-container">
+      <h1 style="color:green">ARTISTS'S NEWS ABOUT COPYRIGHT</h1>
+      <button class="toggle-button" onclick="myFunction()">Toggle white mode</button>
+    </div>
+    <p>Click on the card to read more</p>
+    <br>
+    <section class="news-gallery">
+      <!-- Example Artist Cards (same as before) -->
+      <div class="news-card" style="background-color: #f297f4;">
+        <a href="https://www.latimes.com/entertainment-arts/music/story/2024-12-17/adele-million-years-ago-pulled-plagiarism">
+          <img src="image/adele.jpg" alt="Artist 1">
+          <h2>Adele's song “Million Years Ago” must be pulled from global platforms — including streaming services — judge Victor Torres</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #53c3dc;">
+        <a href="https://www.buzzfeednews.com/article/leylamohammed/selena-gomez-accused-plagiarism-sarah-bahbah-music-video">
+          <img src="image/selena.jpg" alt="Artist 2">
+          <h2>Selena was previously accused of copying Sarah's work back in 2018, when fans pointed out how her “Back to You” music video seemed to emulate Sarah's style.</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #d76fef;">
+        <a href="https://www.independent.co.uk/arts-entertainment/music/news/miley-cyrus-flowers-bruno-mars-lawsuit-b2614052.html">
+          <img src="image/miley.jpg" alt="Artist 3">
+          <h2>According to TMZ, a lawsuit has been filed by Tempo Music Investments, which alleges that Cyrus’s song copies the chord progressions and mirrors some of the lyrics featured in Mars’s ballad, as well as claiming there are substantial similarities in the melody, harmony and chorus.</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #d66f90;">
+        <a href="https://www.cbc.ca/news/canada/british-columbia/sam-smith-explains-why-he-settled-copyright-dispute-with-tom-petty-1.2948473">
+          <img src="image/sam.jpg" alt="Artist 4">
+          <h2>Sam Smith claims he had never even heard I Won't Back Down, the 1989 Tom Petty and the Heartbreakers track he was forced to settle a copyright dispute over.</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #ebc049;">
+        <a href="https://www.digitalmusicnews.com/2019/12/06/katy-perry-fights-back-copyright-infringement/">
+          <img src="image/katy.jpg" alt="Katy Perry">
+          <h2>Katy Perry and her legal team are officially striking back against a recent $2.78 million copyright infringement ruling related to the hit song “Dark Horse” — with the first counter-arguments scheduled for January of 2020.</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #e27d2a;">
+        <a href="https://www.latimes.com/entertainment-arts/music/story/2021-08-30/olivia-rodrigo-adam-levine-songs-paramore-elvis-costello">
+          <img src="image/adam.jpg" alt="Adam Levine">
+          <h2>Adam Levine is defending fellow singer Olivia Rodrigo amid allegations that she has plagiarized other artists.</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #d3e382;">
+        <a href="https://www.vulture.com/2018/01/radioheads-copyright-dispute-with-lana-del-rey-explained.html">
+          <img src="image/lana.jpg" alt="Lana Del Rey">
+          <h2>Radiohead is suing Lana Del Rey over similarities between her Lust for Life song and their hit "Creep".</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #7cef99;">
+        <a href="https://abcnews.go.com/Entertainment/jury-reaches-verdict-ed-sheeran-copyright-infringement-case/story?id=99022695">
+          <img src="image/ed.jpg" alt="Ed Sheeran">
+          <h2>Ed Sheeran was accused of copying the rhythm and chord progression for his hit song “Thinking Out Loud” from the song “Let’s Get It On”.</h2>
+        </a>
+      </div>
+      <div class="news-card" style="background-color: #ea4ed5;">
+        <a href="https://www.jdsupra.com/legalnews/lil-nas-x-takes-his-horse-to-the-old-87632/">
+          <img src="image/lil.jpg" alt="Lil Nas X">
+          <h2>Lil Nas X was sued by producers for allegedly infringing their copyrighted material with his track “Rodeo.”</h2>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Artist News | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function myFunction() {
+      var element = document.body;
+      element.classList.toggle("white-mode");
+    }
+  </script>
+
+</body>
+</html>

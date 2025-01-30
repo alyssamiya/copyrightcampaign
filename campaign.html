@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Campaign</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #615d5d;
+      color: #0d0d0d;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+    }
+
+    /* Posters Section */
+    .posters-section {
+      padding: 50px 20px;
+      background-color: #101010;
+      text-align: center;
+    }
+
+    .posters-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .posters {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .posters img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    /* About Section */
+    .about {
+      padding: 50px 20px;
+      background-color: #52b470;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+    }
+
+    .milestones {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .milestone {
+      width: 60%; /* Adjust width for centered content */
+    }
+
+    .milestone h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .milestone ul {
+      text-align: left;
+      margin: 0 auto;
+      display: inline-block;
+      padding: 0;
+    }
+
+    .milestone ul li {
+      position: relative;
+      font-size: 18px;
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .milestone ul li:hover {
+      transform: scale(1.05);
+      background-color: #e0e0e0;
+    }
+
+    .milestone ul li:before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 10px solid #ffffff;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+
+    /* Round Card Menu Section */
+    .round-cards-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .round-card {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .round-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .round-card:hover {
+      transform: scale(1.05);
+    }
+
+    .round-card-content {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    /* Get Involved Section */
+    .get-involved {
+      padding: 50px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .get-involved h2 {
+      font-size: 32px;
+    }
+
+    .get-involved ul {
+      margin-top: 20px;
+    }
+
+    .get-involved li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #0b0b0b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer .footer-links a {
+      color: white;
+      margin: 0 15px;
+    }
+
+    footer .social-media a {
+      color: white;
+      margin: 0 15px;
+    }
+    .join-campaign form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .join-campaign input {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .join-campaign button {
+      padding: 10px 20px;
+      background-color: #52b470;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .join-campaign button:hover {
+      background-color: #419a5c;
+    }
+
+    #success-message {
+  display: none;
+  color: rgb(137, 218, 137);
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 15px;
+}
+  </style>
+</head>
+<body>
+  
+  <!-- Posters Section -->
+  <section id="posters" class="posters-section">
+    <audio controls autoplay>
+      <source src="audio/Calming relaxing music 30 seconds.mp3" type="audio/ogg">
+      <source src="audio/Calming relaxing music 30 seconds.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <h2 style="color:white;">Our Campaign Posters</h2>
+    <div class="posters">
+      <img src="image/poster.jpg" alt="Poster 1">
+      <img src="image/poster1.jpg" alt="Poster 2">
+      <img src="image/poster2.jpg" alt="Poster 3">
+    </div>
+  </section>
+ 
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About the Campaign</h2>
+    <p>The Copyright Awareness Campaign is an initiative dedicated to addressing the challenges creators face in protecting their work in the digital age. As digital platforms and streaming services continue to grow, the rights of artists and content
+       creators are often overlooked, leading to issues like unfair compensation and unauthorized use of intellectual property.
+      <br>Our campaign seeks to bridge this gap by raising awareness about copyright issues, educating the public on the importance of respecting creators' rights, and advocating for stronger enforcement of copyright protections.
+       By fostering collaboration among artists, audiences, and platforms, we aim to create an environment where creativity is celebrated, protected, and fairly compensated.</p>
+    <div class="milestones">
+      <div class="milestone">
+        <h3>Our Goals</h3>
+        <ul>
+          <li>Raise awareness about copyright issues on digital platforms like Spotify.</li>
+          <li>Advocate for fairer royalty distribution and stronger copyright enforcement.</li>
+          <li>Provide education and resources to help artists protect their work.</li>
+          <li>Encourage listeners to support creators by respecting copyright laws.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+   <!-- Get Involved Section -->
+  <section id="get-involved" class="get-involved">
+    <h2>How You Can Help</h2>
+    <p>Your support is essential to our success. Here's how you can get involved:</p>
+    <ul>
+      <li>Volunteer Your Time</li>
+      <li>Attend an Event</li>
+      <li>Sign Up for Updates</li>
+    </ul>
+  </section>
+  
+     <!-- Join the Campaign Section -->
+  <section id="join-campaign" class="join-campaign">
+    <h2 style="color:white;">Join the Campaign - 15th January 2025,  2PM-4PM at UCSI University Insitute of Music. </h2>
+    <p style=" color: white;">Sign up to be a part of our movement and support creators' rights. For more information of our campign please click more information below!</p>
+    <form id="campaign-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Join Now</button>
+    </form>
+    <p id="success-message">Thank you for joining!</p>
+  </section>
+   <script>
+    document.getElementById("campaign-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("success-message").style.display = "block";
+      this.reset();
+    });
+  </script>
+
+ 
+  <section>
+    <!-- Round Cards Section with Background Image -->
+  <section id="round-card-menu" class="round-cards-container">
+    <a href="dates.html" class="round-card">
+      <img src="image/spoti.png" alt="Card 1 Image">
+      <div class="round-card-content">More Information</div>
+    </a>
+    <a href="copyright.html" class="round-card">
+      <img src="image/spoti.png" alt="Card 2 Image">
+      <div class="round-card-content">Copyright</div>
+    </a>
+    <a href="artists.html" class="round-card">
+      <img src="image/spoti.png" alt="Card 3 Image">
+      <div class="round-card-content">Artists</div>
+    </a>
+    <a href="podcast.html" class="round-card">
+      <img src="image/spoti.png" alt="Card 4 Image">
+      <div class="round-card-content">Podcast</div>
+    </a>
+  </section>
+  
+
+  <!-- News Section -->
+  <footer>
+  <section id="news" class="news">
+    <h2>Latest News</h2>
+    <div class="news-item">
+      <h3>Campaign Reaches 500 Volunteers!</h3>
+      <p>We’re excited to announce that we’ve reached 500 volunteers. Thank you for your support!</p>
+    </div>
+    <div class="news-item">
+      <h3>New Event Announced!</h3>
+      <p>Join us for our upcoming fundraiser event next month. Details coming soon!</p>
+    </div>
+  </section>
+</footer>
+
+
+
+</body>
+</html>
